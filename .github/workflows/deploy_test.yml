@@ -45,7 +45,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5.6
         with:
           registry: docker.io
-          tags: v1, latest
+          tags: latest
           image: 3739323298328/assignmentboardfrontend
           dockerfile: .
           username: ${{ secrets.DOCKER_USERNAME }}
