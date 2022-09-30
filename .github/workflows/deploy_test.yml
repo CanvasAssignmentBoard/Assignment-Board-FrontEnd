@@ -46,7 +46,7 @@ jobs:
         with:
           registry: docker.io
           tags: v1, latest
-          image: ${{ secrets.DOCKER_USERNAME }}/assignmentboardfrontend
+          image: 3739323298328/assignmentboardfrontend
           dockerfile: .
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
