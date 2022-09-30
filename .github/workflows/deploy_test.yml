@@ -1,4 +1,4 @@
-name: Docker
+name: Deploy-Test
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -21,7 +21,7 @@ env:
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 jobs:
-  build_test:
+  buildtest:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 15.x]
@@ -38,6 +38,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm run test
   deploy:
+    needs: buildtest
     runs-on: ubuntu-latest
     steps:
       - name: Docker Build & Push Action
