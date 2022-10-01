@@ -7,14 +7,8 @@ name: Tests
 
 on:
   workflow_call:
-  schedule:
-    - cron: '25 7 * * *'
-  push:
-    branches: [ "main", 'v*', 'v*.*.*' ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
 jobs:
-  buildtest:
+  tests:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 15.x]
