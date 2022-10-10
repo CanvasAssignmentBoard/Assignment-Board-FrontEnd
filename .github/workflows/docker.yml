@@ -30,4 +30,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: 3739323298328/assignmentboardfrontend:latest,3739323298328/assignmentboardfrontend:${{  github.ref_name }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/assignmentboardfrontend:latest,${{ secrets.DOCKER_USERNAME }}/assignmentboardfrontend:${{  github.ref_name }}
