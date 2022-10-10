@@ -6,18 +6,21 @@ name: Deploy
 # documentation.
 
 on:
-  schedule:
-    - cron: '25 7,13,17,23 * * 1-5'
   push:
     branches: [ "main", 'v*', 'v*.*.*' ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
 jobs:
-  tests:
+  Tests:
     secrets: inherit
     uses: ./.github/workflows/tests.yml  # use the callable tests job to run test
-  docker-deploy:
-    needs: tests
+  Deploy:
+    needs: Tests
     secrets: inherit
     uses: ./.github/workflows/docker.yml
+  CodeQuality:
+    needs: Tests
+    secrets: inherit
+    uses: ./.github/workflows/SonarCloud.yml
+  
 
