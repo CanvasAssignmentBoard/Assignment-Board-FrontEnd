@@ -27,7 +27,19 @@
     "testEnvironment": "jsdom",
     "moduleFileExtensions": [
       "js",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "src/*.{js,jsx,ts,tsx}",
+      "!src/**/*.test.{js,jsx,ts,tsx}",
+      "!src/*.test.{js,jsx,ts,tsx}",
+      "!src/**/*Test.{js,jsx,ts,tsx}",
+      "!src/*Test.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sss|styl)$": "identity-obj-proxy"
