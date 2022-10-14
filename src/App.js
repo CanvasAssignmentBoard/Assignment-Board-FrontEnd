@@ -1,22 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import BasicGrid from "./BoardGrid";
+import {HTML5Backend} from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h3 className="app-title">Assignment Board</h3>
+          <DndProvider backend={HTML5Backend}>
+             <div className={"basic-board"}>
+              <BasicGrid/>
+             </div>
+          </DndProvider>
       </header>
     </div>
   );

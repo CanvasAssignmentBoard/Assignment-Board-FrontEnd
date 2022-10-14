@@ -2,9 +2,18 @@
   text-align: center;
 }
 
+p {
+  color: ghostwhite;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.comment-box{
+  height: 260px;
+  max-height: 260px;
+  overflow-y: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,12 +25,38 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.app-title {
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+}
+
+.basic-board {
+  margin: 10px;
+}
+
+.column-styling {
+  background-color: #454c5a;
+  height: 90vh;
+  border-radius: 10px;
+}
+
+.column-header {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.item-styling {
+  background-color: #8a97b2;
+  height: 10vh;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .App-link {
