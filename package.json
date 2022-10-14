@@ -41,8 +41,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watch",
-    "jest": "jest --collect-coverage --passWithNoTests",
+    "test": "jest --collect-coverage --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
