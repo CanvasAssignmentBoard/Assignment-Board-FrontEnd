@@ -24,14 +24,6 @@
     "web-vitals": "^2.1.4"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "ts",
-      "tsx"
-    ],
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "src/*.{js,jsx,ts,tsx}",
@@ -41,6 +33,7 @@
       "!src/*Test.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
+
     "moduleNameMapper": {
       "\\.(css|less|scss|sss|styl)$": "identity-obj-proxy"
     },
@@ -53,7 +46,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --collect-coverage --passWithNoTests",
+    "test": "set CI=true && react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
