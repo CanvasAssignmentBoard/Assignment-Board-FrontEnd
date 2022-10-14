@@ -1,22 +1,12 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import {Container, Divider} from "@mui/material";
-import {DndProvider, useDrop} from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import {useDrop} from 'react-dnd'
 
 import {ItemCard} from "./ItemCard";
-import {useState} from "react";
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+
 const arr1 = [
     { id: 1, description: "Test 1 omschrijving", name: 'Task 1', status: "todo" },
     { id: 2, description: "Test 2 omschrijving", name: 'Task 2', status: "todo" }];
@@ -30,13 +20,10 @@ const arr4 = [
     { id: 7, description: "Test 7 omschrijving", name: 'Task 7', status: "done" },
     { id: 8, description: "Test 8 omschrijving", name: 'Task 8', status: "done" }];
 export default function BasicGrid() {
-    const [basket1, setBasket1] = useState(arr1);
-    const [basket2, setBasket2] = useState(arr2);
-    const [basket3, setBasket3] = useState(arr3);
-    const [basket4, setBasket4] = useState(arr4);
     const [{ isOver }, dropRef] = useDrop({
         accept: 'item',
-        drop: (item) => {window.alert(item.name + " Dragged to column 'To do' (API CALL)")},
+        drop: (item) => {
+            window.alert(item.name + " Dragged to column 'To do' (API CALL)")},
         // drop: (item) => setBasket1(...basket1.push(item)),
         collect: (monitor) => ({
             isOver: monitor.isOver()
@@ -76,7 +63,7 @@ export default function BasicGrid() {
                             <p className={"column-header"}>To Do</p>
                             <Divider/>
                             <div ref={dropRef}>
-                                {basket1.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status} />)}
+                                {arr1.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status} />)}
                                 {isOver && <div>Drop Here!</div>}
                             </div>
                         </Container>
@@ -86,7 +73,7 @@ export default function BasicGrid() {
                             <p className={"column-header"}>In Progress</p>
                             <Divider/>
                             <div  ref={dropRef2}>
-                                {basket2.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status} />)}
+                                {arr2.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status} />)}
                                 {isOver2 && <div>Drop Here!</div>}
                             </div>
                         </Container>
@@ -96,7 +83,7 @@ export default function BasicGrid() {
                             <p className={"column-header"}>Needs Feedback</p>
                             <Divider/>
                             <div  ref={dropRef3}>
-                                {basket3.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status}/>)}
+                                {arr3.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status}/>)}
                                 {isOver3 && <div>Drop Here!</div>}
                             </div>
                         </Container>
@@ -106,7 +93,7 @@ export default function BasicGrid() {
                             <p className={"column-header"}>Done</p>
                             <Divider/>
                             <div ref={dropRef4}>
-                                {basket4.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status}/>)}
+                                {arr4.map(item => <ItemCard key={item.id} id={item.id} name={item.name} description={item.description} status={item.status}/>)}
                                 {isOver4 && <div>Drop Here!</div>}
                             </div>
                         </Container>

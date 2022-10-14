@@ -12,10 +12,7 @@ import FormatBold from '@mui/icons-material/FormatBold';
 import FormatItalic from '@mui/icons-material/FormatItalic';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Check from '@mui/icons-material/Check';
-import {Avatar, List, ListItem, ListItemAvatar, ListItemText, useFormControl} from "@mui/material";
-import {DriveFileRenameOutlineOutlined, InsertEmoticonTwoTone} from "@mui/icons-material";
-import Typography from "@mui/material/Typography";
-import {ItemCard} from "./ItemCard";
+import {List, ListItem, ListItemText} from "@mui/material";
 
 export default function TextareaValidator() {
     const [italic, setItalic] = React.useState(false);

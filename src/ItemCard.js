@@ -1,17 +1,12 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Avatar, IconButton, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
+import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import {
-    Close,
-    DriveFileMoveOutlined, DriveFileRenameOutlineOutlined,
-    InsertEmoticonTwoTone,
-    SignalWifiConnectedNoInternet4Outlined
+    DriveFileRenameOutlineOutlined,
+    InsertEmoticonTwoTone
 } from "@mui/icons-material";
 import Grid from "@mui/material/Unstable_Grid2";
 import TextareaValidator from "./CommentBox";

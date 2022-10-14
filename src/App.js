@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import BasicGrid from "./BoardGrid";
 import {HTML5Backend} from "react-dnd-html5-backend";
